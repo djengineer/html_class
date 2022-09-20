@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		div { display:block; },
+		
+	</style>
+
+	<link rel="stylesheet" type="text/css" href="./custom.css">
+</head>
+<body>
+
+<h1>Changing Div Width</h1>
+<p>The following will change div width with in-line css.</p>
+
+<div id="row1">
+	<div style="width:40%;position: relative;  display:block;  background-color: grey;">1</div>
+	<div style="width:40%;position: relative;  display:block;  background-color: blue;">2</div>
+	<hr>
+	<hr>
+	<hr>
+</div>
+
+<div id="row2">
+	<h2>With float left and right</h2>
+	<div style="width:50%;position: relative;  display:block;  background-color: orange; float:left;">1</div>
+	<div style="width:50%;position: relative;  display:block;  background-color: cyan;float:right">2</div>
+</div>
+	<hr>
+	<hr>
+	<hr>
+<div id="row3" style="width:500px; background-color: grey;">
+	<h2>Adjusting the parent div's width</h2>
+	<p>We set the parent div width by 500 pixel. We can also set in percentage</p>
+	<div style="width:50%;position: relative;  display:block;  background-color: orange; float:left;">1</div>
+	<div style="width:50%;position: relative;  display:block;  background-color: cyan;float:right">2</div>
+	<p>Percentage is take with reference to the parent element. Now the blocks are 50% of 500 pixels.</p>
+	
+</div>
+<hr>
+<hr>
+<hr>
+<div id="row4" style="width:500px; height: 300px; background-color: grey;">
+	<h2>Adjusting the parent div's height</h2>
+	<p>We set the parent div height by 300 pixel. Height cannot be set by %.</p>
+	<div style="width:50%;position: relative;  display:block;  background-color: orange; float:left;">1</div>
+	<div style="width:50%;position: relative;  display:block;  background-color: cyan;float:right">2</div>
+</div>
+<hr>
+<hr>
+<hr>
+<div id="row5" style="width:500px; height: 300px; border-style: solid;">
+	<h2>Using Borders</h2>
+	<p><a href="https://www.w3schools.com/css/css_border.asp">https://www.w3schools.com/css/css_border.asp</a><br>
+	Even though the blocks are 50%, border will add some width, therefore alignment is thrown off because of the extra border width</p>
+	<div style="width:50%;position: relative;  display:block;  float:left; border-style: solid;">1</div>
+	<div style="width:50%; position: relative;  display:block;  float:right;border-style: solid;">2</div>
+</div>
+<hr>
+<hr>
+<hr>
+<div id="row6" style="width:500px; height: 300px; border-style: solid;">
+	<h2>Table with Borders</h2>
+	<p><a href="https://www.w3schools.com/html/html_table_borders.asp">Table borders</a><br>
+	</p>
+	<table style="width:100%">
+		<tr>
+			<th>Fruit</th>
+			<th>Price</th>
+		</tr>
+		<tr>
+			<td>apple</td>
+			<td>1.20</td>
+		</tr>
+		<tr>
+			<td>pear</td>
+			<td>1.00</td>
+		</tr>
+		<tr>
+			<td>watermelon</td>
+			<td>3.99</td>
+		</tr>
+	</table>
+</div>
+<hr>
+<hr>
+<hr>
+</body>
