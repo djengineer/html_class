@@ -23,22 +23,15 @@ chmod +x server_linux64.bin
 
 ```
 
-# MD5 Checksums for the binaries and executables
-```
-server_win64.exe: 342574b886d3ad921aebba00ccc19d6f
-
-server_win64.bin: 414e1eb6c28b85f89c9bc60349ffdc2d
-
-server_linux64.sh: 6ff229cf9d6f58e2e1408a0bc9a5d750
-
-```
 
 
 # Accessing your web page
 
 Go to the following URL in your browser after running the server:
 ```
-http://localhost:8080/
+http://localhost if you are using XAMPP/LAMPP
+or
+http://localhost:8000/
 ```
 
 # Changing the web root directory (simple http server)

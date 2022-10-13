@@ -10,6 +10,6 @@ basic auth
 .htaccess
 
 # htpassword placement
-Windows:.htpassword in xampp/apache/.htwpassword
+Windows:.htpassword in xampp/apache/.htpassword
 
-Linux (LAMPP): /lampp/.htpassword
+Linux (LAMPP): /opt/lampp/.htpassword
