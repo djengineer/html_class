@@ -1,27 +1,17 @@
 # HTML CLASS
 
-# Running the simple web server
+# Running the simple network tool
 This web server can only server GET files as a static file server. It is unable to run any form submission with POST requests.
 
-Port:8080
-URl: http://localhost:8080/
+Start the HTTP server from the tool. THe web root will be where ever the binary is located at.
+
+Port:8000
+URl: http://localhost:8000/
 
 # Full PHP server XAMPP
 
 Use https://www.apachefriends.org/download.html. Download and install the XAMPP for your Operative System.
 
-# Executing the binaries for simple static HHTTP server.
-
-Windows 64bit: Run the server_win64.exe
-
-Linux 64bit: Run the server_linux64.bin
-
-In the linux command line:
-```bash
-chmod +x server_linux64.bin
-./server_linux64.bin
-
-```
 
 
 
