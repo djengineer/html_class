@@ -1,0 +1,26 @@
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+#top_menu{
+    color: blue;
+}
+
+#banner{
+    background-color: grey;
+}
+
+.grey_font{
+    color: grey;
+}
+.red_background{
+    background-color: red;
+}
+
+.special_button:hover{
+    background-color: black;
+}
+
+a:visited{
+    color: red;
+}

@@ -1,0 +1,9 @@
+p {
+    color:#2e2e2d;
+}
+#main{
+	display:block;
+	margin:auto;
+	position:relative;
+	padding: 20px 50px 20px 50px;
+}

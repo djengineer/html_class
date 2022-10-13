@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		div { display:block; },
+		
+	</style>
+
+	<link rel="stylesheet" type="text/css" href="./custom.css">
+</head>
+<body>
+	  <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg" alt="Davie's Burgers Logo" id="logo">
+         <!--Add your code below-->
+         <!-- action to .html file is meaningless on it's own as there is no server to process the post data-->
+      <form action="/practice.html" method="POST">
+      <h1> Daves Burgers Practice </h1>
+      <p> This practice.html will be used as a form </p>
+      </form>
+
+
+
+<form action="/example.html" method="POST">
+  <input type="text" name="first-text-field" value="already pre-filled">
+</form>
+
+<form action="/example.html" method="POST">
+  <input type="text" name="first-text-field" value="" placeholder="example@gmail.com">
+</form>
+
+<form action="/example.html" method="POST">
+  <input type="text" name="first-text-field" value="" placeholder="example@gmail.com">
+</form>
+
+<form action="/example.html" method="POST">
+  <label for="meal">What do you want to eat?</label>
+  <br>
+  <input type="text" id="meal" name="food" value="">
+</form>
+
+
+
+<form>
+	<section class="protein">
+	 <label for="patty">What type of protein would you like?</label>
+	  <input type="text" name="patty" id="patty" value="beef">
+	  </section>
+	  <section class="patties">
+	  <label for="amount">How many patties would you like?</label>
+	  <input id="amount" name="amount" type="number" step="1">
+	 </section>
+ </form>
+
+<form>
+  <label for="volume"> Volume Control</label>
+  <input id="volume" name="volume" type="range" min="0" max="100" step="1">
+</form>
+<form>
+  <p>Choose your pizza toppings:</p>
+  <label for="cheese">Extra cheese</label>
+  <input id="cheese" name="topping" type="checkbox" value="cheese">
+  <br>
+  <label for="pepperoni">Pepperoni</label>
+  <input id="pepperoni" name="topping" type="checkbox" value="pepperoni">
+  <br>
+  <label for="anchovy">Anchovy</label>
+  <input id="anchovy" name="topping" type="checkbox" value="anchovy">
+</form>
+
+
+<form>
+  <label for="lunch">What's for lunch?</label>
+  <select id="lunch" name="lunch">
+    <option value="pizza">Pizza</option>
+    <option value="curry">Curry</option>
+    <option value="salad">Salad</option>
+    <option value="ramen">Ramen</option>
+    <option value="tacos">Tacos</option>
+  </select>
+</form>
+<form>
+  <input type="submit" value="Send">
+</form>
+
+
+</body>
+</html>

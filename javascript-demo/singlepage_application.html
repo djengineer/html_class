@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div { display:block; },
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="./custom.css">
+</head>
+<body id="body">
+	<nav>Top Menu
+		<button id="p1_btn" onclick="display_page(0)">Page 0</button><button id="p1_btn" onclick="display_page(1)">Page 1</button><button id="p2_btn" onclick="display_page(2)">Page 2</button><button id="p3_btn" onclick="display_page(3)">Page 3(AJAX)</button><button id="p4_btn" onclick="display_page(4)">Page 4(GET Params)</button>
+	</nav>
+	<hr>
+	<div id="main">
+		
+	</div>
+	<div id="footer"></div>
+	<script>
+		var page_0_content = `
+		Select a page from top menu.
+		`
+		var page_1_content=`
+		<h1>Page 1 content</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida, sapien vel commodo posuere, ligula erat euismod eros, eu semper eros urna ac mauris. Aenean efficitur nunc et lobortis maximus. Donec ultricies pulvinar velit ac euismod. Mauris consectetur ante at mattis semper. Donec ac felis eleifend, tempor tellus non, porttitor eros. Nunc mattis ex at molestie dictum. Quisque viverra velit non tristique aliquet. Nam eget velit vitae mi ultricies blandit. Aenean iaculis lacus tellus, non vulputate mi pellentesque molestie.
+		<br><br>
+		Aenean ultricies turpis sed ipsum molestie elementum. Ut elementum, magna vitae ultrices tempus, dui nunc tincidunt ligula, in commodo quam magna a dui. Pellentesque sollicitudin bibendum lorem id pharetra. Curabitur vulputate sodales orci, vel feugiat urna lacinia sed. Duis eu tempus diam. Integer velit diam, condimentum ut velit id, tincidunt dignissim neque. Nunc a dui non augue pretium auctor. Etiam nec urna est. Nullam porttitor lacus quis dolor tempus ullamcorper. Pellentesque quis leo ac neque mattis ultricies. Donec et ullamcorper diam, ut rutrum lorem. Donec lacinia est in odio consequat finibus. Maecenas sed ex finibus, vestibulum mi in, accumsan quam. Nam a vestibulum ante.
+		<br><br>
+		Phasellus feugiat felis diam, eget ornare ex accumsan sit amet. Maecenas dictum pellentesque est, id mattis lacus pharetra et. Donec vitae nisl pellentesque lacus scelerisque sollicitudin. Aenean gravida vulputate enim, et dictum risus gravida nec. Sed sed dui nulla. Praesent faucibus dictum turpis, eget rutrum ligula pharetra id. Aliquam aliquam luctus ipsum, sed euismod purus vestibulum quis.</p>
+		`
+		var page_2_content=`<h1>Page 2 content</h1>
+		<p>The content for page 0,1, and 2 were loaded together with the main HTML file.<br><br>Looking at the network tab in dev tools, no new GET requests are made when changing pages.</p>
+		<p>Duis accumsan, diam sed tincidunt pretium, dolor justo efficitur nibh, in tincidunt justo elit vitae magna. Fusce sit amet elit maximus, mattis lacus vitae, tempus neque. Curabitur pulvinar fermentum consectetur. Suspendisse vitae leo ligula. Ut in vestibulum purus. Vivamus egestas venenatis enim, porttitor ornare elit placerat imperdiet. Nullam ut nunc convallis, rhoncus urna vitae, commodo libero. Nulla scelerisque aliquet tincidunt.
+		<br><br>
+		Nullam gravida interdum tempor. Proin convallis nunc augue, ac viverra risus maximus euismod. Nunc vitae luctus quam. Quisque et eleifend metus. Nulla varius magna nisi, eu congue justo sollicitudin id. Vestibulum faucibus elit vitae urna pulvinar aliquet. Mauris efficitur hendrerit risus, sed ullamcorper nunc sollicitudin sed. Phasellus est tortor, scelerisque quis varius vel, iaculis at quam. Cras eros mauris, feugiat eu volutpat eu, finibus ac diam. Nunc auctor tristique enim in volutpat. Vestibulum quis venenatis justo. Nullam odio eros, tempor sed lacus eu, porta consectetur nunc. In a sapien efficitur, gravida nunc vitae, porttitor felis. Suspendisse dictum, turpis id tempus placerat, nisl arcu ornare ipsum, eget tristique sapien tellus bibendum magna.</p>`
+
+		var page_4_content =  `
+				<h1>Page 4 - GET parameters in URL</h1>
+				Insert ?search=hello at the back of the url. We will retrieve the GET parameter and display it below with Javascript.
+				<br><br>You have searched for: `
+
+		function display_page(page_num){
+			if(page_num == 0){
+				document.getElementById("main").innerHTML = page_0_content;
+				localStorage.setItem("prev_page", page_num);
+			}
+			if(page_num == 1){
+				document.getElementById("main").innerHTML = page_1_content;
+				localStorage.setItem("prev_page", page_num);
+			}
+			if(page_num == 2){
+				document.getElementById("main").innerHTML = page_2_content;
+				localStorage.setItem("prev_page", page_num);
+			}
+			if(page_num == 3){
+				const xhttp = new XMLHttpRequest();
+				  xhttp.onload = function() {
+				    document.getElementById("main").innerHTML =
+				    this.responseText;
+				  }
+				  xhttp.open("GET", "page3.html");
+				  xhttp.send();
+				localStorage.setItem("prev_page", page_num);
+			}
+			if(page_num == 4){
+				localStorage.setItem("prev_page", page_num);
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				const search = urlParams.get('search')
+				document.getElementById("main").innerHTML = page_4_content + search;		
+				
+			}
+			
+		}
+		if (localStorage.getItem("prev_page")==null){
+			display_page(0);
+		}else{
+			display_page(localStorage.getItem("prev_page"));
+		}
+
+		
+	</script>
+</body>
+</html>
